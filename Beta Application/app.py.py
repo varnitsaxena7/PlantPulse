@@ -81,6 +81,9 @@ if st.button('Predict', key='predict_button'):
         image = Image.open(plant_image)
         opencv_image = cv2.cvtColor(tf.keras.preprocessing.image.img_to_array(image), cv2.COLOR_RGB2BGR)
         
+        # Normalize image data to [0.0, 1.0]
+        opencv_image = opencv_image / 255.0
+        
         st.image(opencv_image, channels="BGR", caption="Uploaded Image", width=300)
 
         resized_image = cv2.resize(opencv_image, (256, 256))
