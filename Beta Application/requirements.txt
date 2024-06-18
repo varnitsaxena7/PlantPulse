@@ -1,6 +1,6 @@
 streamlit==1.22.0
 opencv-python-headless==4.5.5.64
-keras==2.6.0
-tensorflow==2.6.0
+keras==2.15.1
+tensorflow==2.15.1
 Pillow==9.1.1
 google-generativeai==1.0.0
