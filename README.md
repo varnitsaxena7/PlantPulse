@@ -7,7 +7,7 @@ You can run the beta application by the deployed link provided.
 
 You can download the code or clone the repository to run the local application on your local system by following these steps.
 
-1.Clone the repository or download the code.
+1.Clone the repository or download the code and also download the plant disease model prediction file from the link provided and store it at the same place after downloading.
 
 2.Open the directory where the main.py file of local application is present.
 
