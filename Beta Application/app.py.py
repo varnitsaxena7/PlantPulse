@@ -2,21 +2,26 @@ import streamlit as st
 import cv2
 from keras.models import load_model
 import google.generativeai as genai
-from io import BytesIO
 from PIL import Image
 import tensorflow as tf
 
+# Configure the Google Generative AI with your API key
 genai.configure(api_key="AIzaSyBOisPhVp7vcjWXkcyU1KEQEiUvdhCiBIE")
 
+# Function to get response from Gemini Pro model
 def gemini_pro_response(user_prompt):
     gemini_pro_model = genai.GenerativeModel("gemini-pro")
     response = gemini_pro_model.generate_content(user_prompt)
     result = response.text
     return result
 
+# Load the pre-trained model
 model = load_model('plant_disease.h5')
+
+# Define class names
 CLASS_NAMES = ['Corn-Common_rust', 'Potato-Early_blight', 'Tomato-Bacterial_spot']
 
+# Streamlit app UI setup
 st.markdown(
     """
     <style>
@@ -65,9 +70,11 @@ st.markdown(
 st.markdown("<h1 class='title'>Plant Disease Detection</h1>", unsafe_allow_html=True)
 st.markdown("Upload an image of the plant leaf", unsafe_allow_html=True)
 
+# File uploader for plant image
 plant_image = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 it = st.checkbox("Prevention and Cure Details")
 
+# Predict button
 if st.button('Predict', key='predict_button'):
 
     if plant_image is not None:
@@ -80,7 +87,7 @@ if st.button('Predict', key='predict_button'):
         input_image = resized_image.reshape((1, 256, 256, 3))
 
         Y_pred = model.predict(input_image)
-        predicted_class = CLASS_NAMES[np.argmax(Y_pred)]
+        predicted_class = CLASS_NAMES[tf.argmax(Y_pred[0])]
 
         st.markdown(f"<p class='result'>This is {predicted_class.split('-')[0]} leaf with {predicted_class.split('-')[1]}</p>", unsafe_allow_html=True)
 
