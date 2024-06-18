@@ -9,7 +9,7 @@ You can download the code or clone the repository to run the local application o
 
 1.Clone the repository or download the code.
 
-2.Open the directory where the main.py file is present.
+2.Open the directory where the main.py file of local application is present.
 
 3.Open the terminal in the same directory and run python -m streamlit run main.py.
 
