@@ -1,17 +1,45 @@
-# PlantPulse
-There are two applications-Local Application and Beta Application.
+# PlantPulse - Plant Disease Classifier App
 
-Local Application is able to predict and classify between 38 plant diseases whereas beta application does only for a small amount.
+Welcome to PlantPulse, a web application for classifying plant diseases using machine learning and providing cure and prevention information.
 
-You can run the beta application by the deployed link provided.
+## Overview
 
-You can download the code or clone the repository to run the local application on your local system by following these steps.
+PlantPulse includes two applications: Local Application and Beta Application. The Local Application predicts and classifies 38 different plant diseases locally, whereas the Beta Application provides classification for a smaller subset and can be accessed via the deployed link.
 
-1.Clone the repository or download the code and also download the plant disease model prediction file from the link provided and store it at the same place after downloading.
+## Key Features
 
-2.Open the directory where the main.py file of local application is present.
+- **Local Application:** Predicts and classifies 38 plant diseases locally.
+- **Beta Application:** Provides classification for a smaller subset via a deployed link.
+- **Image Upload:** Allows users to upload images of plant leaves to diagnose diseases.
+- **Cure and Prevention Information:** Provides information on curing and preventing plant diseases.
+- **Responsive Design:** Works seamlessly on desktop and mobile devices.
 
-3.Open the terminal in the same directory and run python -m streamlit run main.py.
+## Demo
 
-4.Now you have successfully opened the application and can easily upload the picture of the leaf to find out the diseases along with its cure and prevention.
+Check out the live demo for the Beta Application: [PlantPulse Beta Demo](https://quiz-app-qkxt.onrender.com/)
 
+## Local Application Setup
+
+To run the Local Application:
+
+1. Clone the repository and download the necessary model file from the provided link, storing it in the same directory.
+
+2. Navigate to the directory containing `main.py` for the Local Application. 
+
+3. Open a terminal in that directory and run:python -m streamlit run main.py
+
+4. The application will open in your default web browser.
+
+## Usage
+
+- Upload an image of a plant leaf to diagnose diseases.
+- Click on "Predict" to get the disease prediction result.
+- Check the checkbox to view cure and prevention details for the predicted disease.
+
+## Contributing
+
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
+
+## Developed By
+
+This project was developed by [Varnit Saxena](https://github.com/varnitsaxena7).
