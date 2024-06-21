@@ -1,4 +1,4 @@
-# PlantPulse - Plant Disease Classifier App
+# PlantPulse 🌱 - Plant Disease Classifier App
 
 Welcome to PlantPulse, a web application for classifying plant diseases using machine learning and providing cure and prevention information.
 
