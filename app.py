@@ -9,7 +9,11 @@ from PIL import Image
 import tensorflow as tf
 
 genai.configure(api_key="AIzaSyBOisPhVp7vcjWXkcyU1KEQEiUvdhCiBIE")
-
+st.set_page_config(
+    page_title="PlantPulse",
+    page_icon="🌱",
+    layout="centered",  
+)
 if "finder" not in st.session_state:
     st.session_state.finder = ""
 if "prediction_content" not in st.session_state:
