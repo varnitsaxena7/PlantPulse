@@ -44,7 +44,7 @@ def predict_image_class(model, image_path, class_indices):
     return predicted_class_name
 
 
-st.title('Plant Disease Detector')
+st.title('Plant Disease Detector 🌱')
 
 uploaded_image = st.file_uploader("Upload an image of the plant leaf", type=["jpg", "jpeg", "png"])
 it = st.checkbox("Cure and Prevention Details")
