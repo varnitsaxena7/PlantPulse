@@ -28,7 +28,7 @@ def gemini_pro_response(user_prompt):
     return result
 
 
-st.markdown("<h1 class='title'>Plant Disease Detection</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='title'>Plant Disease Detector 🌱</h1>", unsafe_allow_html=True)
 st.markdown("Upload an image of the plant leaf", unsafe_allow_html=True)
 
 plant_image = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
