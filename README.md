@@ -13,6 +13,7 @@ PlantPulse includes two applications: Local Application and Beta Application. Th
 - **Image Upload:** Allows users to upload images of plant leaves to diagnose diseases.
 - **Cure and Prevention Information:** Provides information on curing and preventing plant diseases.
 - **Responsive Design:** Works seamlessly on desktop and mobile devices.
+- **Query Resolution System:** Allows users to ask questions about plant diseases and receive answers.
 
 ## Demo
 
@@ -35,6 +36,7 @@ To run the Local Application:
 - Upload an image of a plant leaf to diagnose diseases.
 - Click on "Predict" to get the disease prediction result.
 - Check the checkbox to view cure and prevention details for the predicted disease.
+- For additional help, ask disease-related queries using the app's question-answer feature.
 
 ## Contributing
 
