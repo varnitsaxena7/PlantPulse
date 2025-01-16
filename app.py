@@ -4,7 +4,7 @@ import cv2
 from keras.models import load_model
 import google.generativeai as genai
 import os
-import json
+import requests
 from PIL import Image
 import tensorflow as tf
 
@@ -14,6 +14,7 @@ st.set_page_config(
     page_icon="🌱",
     layout="centered",  
 )
+
 if "finder" not in st.session_state:
     st.session_state.finder = ""
 if "prediction_content" not in st.session_state:
@@ -31,12 +32,29 @@ def gemini_pro_response(user_prompt):
     result = response.text
     return result
 
+def get_youtube_videos(query):
+    api_key = "AIzaSyBOisPhVp7vcjWXkcyU1KEQEiUvdhCiBIE"
+    search_url = f"https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=3&q={query}&key={api_key}"
+    response = requests.get(search_url)
+    if response.status_code == 200:
+        data = response.json()
+        videos = []
+        for item in data['items']:
+            video_data = {
+                "title": item['snippet']['title'],
+                "url": f"https://www.youtube.com/watch?v={item['id']['videoId']}",
+                "thumbnail": item['snippet']['thumbnails']['default']['url']
+            }
+            videos.append(video_data)
+        return videos
+    return []
 
 st.markdown("<h1 class='title'>Plant Disease Detector 🌱</h1>", unsafe_allow_html=True)
 st.markdown("Upload an image of the plant leaf", unsafe_allow_html=True)
 
 plant_image = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 it=st.checkbox("Prevention and Cure Details")
+
 if st.button('Predict', key='predict_button'):
 
     if plant_image is not None:
@@ -65,9 +83,6 @@ if st.button('Predict', key='predict_button'):
                 response = gemini_pro_response(user_prompt)
                 st.session_state.prediction_content += f"\n\n{response}"
 
-
-
-
 if st.session_state.prediction_content:
     st.markdown("### Prediction Details")
     st.markdown(st.session_state.prediction_content)
@@ -84,3 +99,10 @@ if st.session_state.prediction_content:
                     st.markdown(f"**Answer:** {qa_response}")
                 else:
                     st.error("No response received. Please try again.")
+
+    st.subheader("Watch related videos")
+    videos = get_youtube_videos(st.session_state.finder)
+    for video in videos:
+        st.markdown(f"### {video['title']}")
+        st.image(video['thumbnail'], width=200)
+        st.markdown(f"[Watch on YouTube]({video['url']})")
