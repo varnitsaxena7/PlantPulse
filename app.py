@@ -100,9 +100,3 @@ if st.session_state.prediction_content:
                 else:
                     st.error("No response received. Please try again.")
 
-    st.subheader("Watch related videos")
-    videos = get_youtube_videos(st.session_state.finder)
-    for video in videos:
-        st.markdown(f"### {video['title']}")
-        st.image(video['thumbnail'], width=200)
-        st.markdown(f"[Watch on YouTube]({video['url']})")
