@@ -8,7 +8,6 @@ import json
 from PIL import Image
 import tensorflow as tf
 
-genai.configure(api_key="AIzaSyBOisPhVp7vcjWXkcyU1KEQEiUvdhCiBIE")
 
 if "finder" not in st.session_state:
     st.session_state.finder = ""
