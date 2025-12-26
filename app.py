@@ -8,7 +8,6 @@ import requests
 from PIL import Image
 import tensorflow as tf
 
-genai.configure(api_key="AIzaSyBOisPhVp7vcjWXkcyU1KEQEiUvdhCiBIE")
 st.set_page_config(
     page_title="PlantPulse",
     page_icon="🌱",
@@ -33,8 +32,8 @@ def gemini_pro_response(user_prompt):
     return result
 
 def get_youtube_videos(query):
-    api_key = "AIzaSyBOisPhVp7vcjWXkcyU1KEQEiUvdhCiBIE"
-    search_url = f"https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=3&q={query}&key={api_key}"
+    a"
+    search_url 
     response = requests.get(search_url)
     if response.status_code == 200:
         data = response.json()
