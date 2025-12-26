@@ -6,7 +6,7 @@ import numpy as np
 import tensorflow as tf
 import streamlit as st
 import google.generativeai as genai
-from googleapiclient.discovery fffffkmh9
+from googleapiclient.discovery
 
 if "finder" not in st.session_state:
     st.session_state.finder = ""
