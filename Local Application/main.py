@@ -6,11 +6,7 @@ import numpy as np
 import tensorflow as tf
 import streamlit as st
 import google.generativeai as genai
-from googleapiclient.discovery import build
-
-genai.configure(api_key="AIzaSyBOisPhVp7vcjWXkcyU1KEQEiUvdhCiBIE")
-
-YOUTUBE_API_KEY = "AIzaSyBrSrLW5Xm6WAe6FZJ52pyEuu4rhCB96xU"
+from googleapiclient.discovery fffffkmh9
 
 if "finder" not in st.session_state:
     st.session_state.finder = ""
